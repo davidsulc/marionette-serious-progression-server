@@ -1,5 +1,39 @@
 # encoding: utf-8
 
+# returns a new hash without any nesting, where the keys are the previous nested levels joind with "."
+#
+# hash = {
+#           "simple" => "one",
+#           "generic" => {
+#             "show" => "Show",
+#             "nested" => {
+#               "level" => "data"
+#             }
+#           }
+# }
+#
+# hash.rekey will return
+#
+# {
+#   "simple" => "one",
+#   "generic.show" => "Show",
+#   "generic.nested.level" => "data"
+# }
+class Hash
+  def rekey(base_key=nil)
+    result = {}
+    self.map do |k,v|
+      key = [base_key, k].compact.join(".")
+      if v.respond_to?(:values)
+        result.merge!(v.rekey(key))
+      else
+        result[key] = v
+      end
+    end
+    return result
+  end
+end
+
 class LanguagesController < ApplicationController
   respond_to :json
 
@@ -95,6 +129,6 @@ class LanguagesController < ApplicationController
       }
     end
 
-    respond_with(hash.to_json)
+    respond_with(hash.rekey.to_json)
   end
 end
