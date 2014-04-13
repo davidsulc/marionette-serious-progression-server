@@ -48,6 +48,7 @@ class LanguagesController < ApplicationController
           "delete" => "Delete",
           "remove" => "Remove",
           "changedOnServer" => "This model has changed on the server, and has been updated with the latest data from the server and your changes have been reapplied.",
+          "confirmationMessage" =>  "Are you sure?",
           "unprocessedError" => "An unprocessed error happened. Please try again!"
         },
         "menu" => {
@@ -62,7 +63,8 @@ class LanguagesController < ApplicationController
           }
         },
         "acquaintance" => {
-          "modelName" => "Acquaintance"
+          "modelName" => "Acquaintance",
+          "addConfirmation" => "Add %{firstName} as an acquaintance?"
         },
         "contact" => {
           "attributes" => {
@@ -92,6 +94,7 @@ class LanguagesController < ApplicationController
           "delete" => "Supprimer",
           "remove" => "Retirer",
           "changedOnServer" => "Ce modèle a été modifié sur le serveur, a été mis à jour avec les données les plus récentes provenant du serveur, et vos modifications ont été réappliquées.",
+          "confirmationMessage" =>  "Etes-vous sûr ?",
           "unprocessedError" => "Une erreur indéterminée est survenue. Veuillez essayer à nouveau !"
         },
         "menu" => {
@@ -106,7 +109,8 @@ class LanguagesController < ApplicationController
           }
         },
         "acquaintance" => {
-          "modelName" => "Connaissance"
+          "modelName" => "Connaissance",
+          "addConfirmation" => "Rajouter %{firstName} aux connaissances ?"
         },
         "contact" => {
           "attributes" => {
