@@ -104,7 +104,7 @@ class LanguagesController < ApplicationController
         "about" => {
           "title" => "Concernant cette application",
           "message" => {
-            "design" => "Cette application a été conçue pourv ous accompagner au long de votre apprentissage.",
+            "design" => "Cette application a été conçue pour vous accompagner au long de votre apprentissage.",
             "closing" => "J'espère qu'elle vous a bien servi !"
           }
         },
