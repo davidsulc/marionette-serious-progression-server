@@ -44,6 +44,9 @@ class ContactsController < ApplicationController
   # PATCH/PUT /contacts/1.json
   def update
     @old_contact = @contact.dup
+    # copy the id attribute, so the returned object doesn't default to a null id value
+    # won't cause issues because @old_contact isn't persisted
+    @old_contact.id = @contact.id
     respond_to do |format|
       if @contact.update(contact_params)
         format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
