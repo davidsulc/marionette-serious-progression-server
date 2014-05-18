@@ -9,7 +9,7 @@ ContactManager::Application.routes.draw do
   resources :contacts_legacy, :contacts
 
   post 'contacts_paginated/:contact/acquaintances/add/:acquaintance' => 'acquaintanceships#link'
-  post 'contacts_paginated/:contact/acquaintances/remove/:acquaintance' => 'acquaintanceships#unlink'
+  delete 'contacts_paginated/:contact/acquaintances/remove/:acquaintance' => 'acquaintanceships#unlink'
 
   get 'languages/:language' => 'languages#translations'
 
